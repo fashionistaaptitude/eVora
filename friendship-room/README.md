@@ -1,13 +1,25 @@
-# Friendship Room
+# eVora · a little place to be
 
-Published private preview: https://evora-friendship-room.breathtakingginger.chatgpt.site
+Private preview: https://evora-friendship-room.breathtakingginger.chatgpt.site
 
-The source.zip archive contains the complete app source and database migrations, with no messages, user records, credentials or dependency directory.
+This iteration turns the Friendship Room into a connected environment. The persistent headboard contains the visitor profile and four destinations:
+- Arrival: an open-air glass crossing with links into the other spaces.
+- Friendship Room: a glass-roofed lounge above water, with a sofa, window seat and waterside seat.
+- Sunroom: a bright greenhouse with a warm chair, glass table, cushion and breeze control.
+- Garden: a pond, trees, stepping stones, bench and stone-ripple interaction.
 
-Features: blue-and-green Frutiger Aero interface, nickname and companion selection, lounge/sunroom/garden chat channels, shared persisted messages, live presence and typing indicators, mood selection, a wave button, optional message chimes and mobile layout.
+Each destination has its own complete SVG panorama. Navigation uses the headboard, in-scene links, destination map, return links and browser history. Profile and presence persist while moving between spaces. A visitor may explore before creating a nickname.
 
-Chat and presence poll the shared server every 2.5 seconds. Messages persist in D1. User input is rendered as text, room profiles are tied to the platform-authenticated visitor and do not require application cookies, write requests check origin and authenticated identity, and sending is rate limited. Signed-in visitors can join once you grant them access through the Site's sharing controls. The current preview is owner-private.
+Chat opens in a small Aero window inside the current destination. Shared messages persist in D1 and are separated by room. Shared presence records where a visitor is seated; other visitors see their companion in that space. The profile editor supports nickname, companion and mood. Ambient sound is optional and off by default.
 
-Validation: backend tests passed for two-visitor message exchange, persistent reads, room separation, presence, typing, session ownership, invalid input, rate limiting and leaving. Production publication succeeded, its DB tables exist, assets return HTTP 200 and anonymous chat reads return HTTP 401. DOM interaction tests also verify cookie-free joining, sending after joining, visible confirmation errors, close controls, and top-level back links. Managed browser QA was unavailable.
+The site remains owner-private. Grant access through Sites sharing before inviting friends.
 
-Local commands: npm install, npm test, npm run build. The deployment targets a Cloudflare Worker with a D1 binding named DB. The tracked .openai/hosting.json identifies the existing Site; preserve that identity for updates. Apply generated schema migrations through the Sites publishing workflow. Never use browser-local storage as shared chat persistence.
+## Source and local checks
+
+source.zip contains the complete authored source, migrations and lockfile, without credentials, chat records, dependencies or build output.
+
+Commands: npm install, npm run build, npm test. Run the build before the artifact tests. The Cloudflare Worker uses a D1 binding named DB. Preserve the existing Site identity in .openai/hosting.json and apply append-only Drizzle migrations through Sites publishing.
+
+Five checks passed, including the complete journey through all four destinations, cookie-free joining, shared seats, profile continuity, room-specific chat, return navigation and browser Back, error handling, backend persistence and built scene assets. These include DOM interaction tests and real SQLite-backed API tests. Visual browser QA was unavailable in the managed environment.
+
+The original blue-and-green Shopify theme remains in place and links to this experience.
