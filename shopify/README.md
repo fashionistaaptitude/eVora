@@ -1,27 +1,30 @@
-# eVora Aero Shopify theme
+# eVora Shopify theme
 
-This ZIP converts the React storefront into a native Shopify Online Store theme. It does not require the Headless channel or a Storefront API token.
+Native Shopify theme for eVora's digital products. No Headless channel or Storefront API token is needed.
 
-## Install or preview
-1. In Shopify Admin, open Online Store → Themes.
-2. Under Theme library, choose Import theme → Upload ZIP file (the wording may be Add theme).
-3. Upload evora-shopify-theme.zip.
-4. Open Customize on eVora Aero. Preview and review before publishing.
+## Homepage
+The homepage contains two sections in one configurable Digital creations section:
+- Hero: choose up to three Top digital products in the theme editor. With no selection, the first three products in the selected collection are featured.
+- Shelf: shows other products from that collection, excluding the featured products. With no collection selection, all published Online Store products are used.
 
-## Configure
-- Theme settings → Brand: set your storefront name.
-- Customize the home page hero, product library collection, studio portrait and story, questions, and newsletter.
-- The library automatically displays products from the selected collection, or all products when no collection is selected.
-- Before products exist, illustration cards are labeled Preview artwork and cannot be purchased.
-- Product prices, currency, availability, variants, bag and checkout come from Shopify.
-- Digital files must be attached and fulfilled through a digital delivery app; this theme does not supply downloadable products.
-- Recurring purchases require actual Shopify selling plans configured by a subscription app. The demo Season Pass prices and bubble discount have not been turned into real offers.
-- To use the contact form, create a Shopify page using the contact template and add it to your navigation. The default footer Contact link opens your store contact email.
-- Configure your store policies, payment provider and selling plan in Shopify before taking real orders.
+The design uses cream, lavender, translucent glass, soft glow and a solarpunk magazine direction.
+
+There are currently no products in the connected Shopify catalog. Until products exist, the hero displays a labeled magazine concept, Solarpunk Futures, and the shelf displays a coming-soon state. These are illustrations, not purchasable product listings. No magazine files, prices or store products have been created.
+
+## Edit
+Shopify Admin → Online Store → Themes → eVora Aero → Edit theme.
+Open Digital creations to choose top products, select your digital-product collection, and edit the headings, introduction, topic labels and magazine-preview copy.
+
+## Theme ZIP
+evora-shopify-theme.zip contains the complete theme, including native product, collection, cart, search, contact, password and 404 templates.
+
+The theme is installed as an unpublished draft. Horizon remains the active theme.
+The original React application remains in the repository.
+
+## Selling digital products
+Add actual products, prices, images and descriptions in Shopify. Make them available to the Online Store. Attach digital files using your digital delivery app. The theme handles presentation and Shopify cart/checkout; it does not generate or fulfill download files.
 
 ## Validation
-All 53 theme files passed the Shopify Liquid/theme validator without warnings or errors.
-Local desktop and mobile browser checks covered images, navigation, FAQ, variant price updates, native product/cart forms, empty/populated library and search.
-These local checks use sample data and do not constitute a real purchase or Shopify-hosted checkout test.
-
-The original React application remains in the repository.
+Shopify Liquid/theme validation passed for the changed files.
+Local desktop and mobile browser checks covered empty and populated catalogs, one and three featured products, automatic featured picks, excluding featured products from the shelf, navigation, asset loading and small-screen overflow.
+Local populated previews use fixtures only; they do not create store products or simulate completed payments.
